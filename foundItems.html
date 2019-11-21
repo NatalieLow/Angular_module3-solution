@@ -1,0 +1,12 @@
+<h1>Menu items that match your search:</h1>
+<ul>
+    <li ng-repeat="item in choices.found">
+       {{item.name}}
+       {{item.short_name}}
+       {{item.description}} 
+       <!-- <li ng-repeat="item in list.items">
+       {{item.name}} = {{item.description}}  -->
+       <!-- <button ng-click="list.onRemove({index: $index});">Don't want </button> -->
+       <!-- <button ng-click="choices.removeItem(index: $index);" class="btn btn-primary">Don't want this one!</button> -->
+   </li>
+</ul>
