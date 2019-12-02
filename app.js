@@ -10,7 +10,7 @@
 
 		function FoundItemsDirective() {
 			var ddo = {
-				// restrict: 'E',
+				restrict: 'E',
 				templateUrl: 'foundItems.html',
 				scope: {
 					found: '<',
@@ -34,18 +34,20 @@
 		 function NarrowItDownController(MenuSearchService) {
 		 	var choices = this;
 		 	choices.searchTerm = "";
-		 	choices.empty = false;
+		 	choices.empty = "";
 		 	// var found_items = [];
 		 	// choices.found = getItems();
 
 		 	choices.getMatchedMenuItems = function (){
 		 		if (choices.searchTerm === ""){
 		 			choices.empty = true;
+		 			console.log(choices.empty)
 		 		} else {
 			 		var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
 			 		console.log(choices.searchTerm);
 			 		promise.then(function(response){
 			 			choices.found = response;
+			 			choices.empty = false;
 			 			console.log(choices.found);
 			 			console.log(choices.empty);	
 			 		})
