@@ -14,7 +14,8 @@
 				templateUrl: 'foundItems.html',
 				scope: {
 					found: '<',
-					onRemove: '&'
+					onRemove: '&',
+					empty: '<'
 				}
 				controller: NarrowItDownController, 
 				controllerAs: 'choices',
@@ -33,10 +34,14 @@
 		 function NarrowItDownController(MenuSearchService) {
 		 	var choices = this;
 		 	choices.searchTerm = "";
+		 	choices.empty = false;
 		 	// var found_items = [];
 		 	// choices.found = getItems();
 
 		 	choices.getMatchedMenuItems = function (){
+		 		if (choices.searchTerm === ""){
+		 			choices.empty = true;
+		 		} else {
 		 		var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
 		 		console.log(choices.searchTerm);
 		 		promise.then(function(response){
@@ -46,6 +51,7 @@
 		 		.catch(function(error){
 		 			console.log(error);
 		 		});
+		 		}	
 
 		 	};
 
