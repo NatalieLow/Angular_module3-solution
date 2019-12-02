@@ -17,7 +17,7 @@
 					onRemove: '&',
 					empty: '<'
 				}
-				controller: NarrowItDownController, 
+				// controller: NarrowItDownController, 
 				controllerAs: 'choices',
 				bindToController: true
 
@@ -42,15 +42,16 @@
 		 		if (choices.searchTerm === ""){
 		 			choices.empty = true;
 		 		} else {
-		 		var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
-		 		console.log(choices.searchTerm);
-		 		promise.then(function(response){
-		 			choices.found = response;
-		 			console.log(choices.found);	
-		 		})
-		 		.catch(function(error){
-		 			console.log(error);
-		 		});
+			 		var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
+			 		console.log(choices.searchTerm);
+			 		promise.then(function(response){
+			 			choices.found = response;
+			 			console.log(choices.found);
+			 			console.log(choices.empty);	
+			 		})
+			 		.catch(function(error){
+			 			console.log(error);
+			 		});
 		 		}	
 
 		 	};
