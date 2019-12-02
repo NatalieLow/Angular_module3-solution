@@ -16,9 +16,9 @@
 					found: '<',
 					onRemove: '&'
 				}
-				// controller: NarrowItDownController, 
-				// controllerAs: 'choices',
-				// bindToController: true
+				controller: NarrowItDownController, 
+				controllerAs: 'choices',
+				bindToController: true
 
 			};
 
