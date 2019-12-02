@@ -1,9 +1,9 @@
 <h1>Menu items that match your search:</h1>
-<ul>
-    <li ng-repeat="item in found">
-       <li>{{item.name}}</li>
-       {{item.short_name}}
-       {{item.description}} 
+<ul ng-repeat="item in found">
+    <li>
+       <p>Name: {{item.name}}</p>
+       <p>Short Name: {{item.short_name}}</p>
+       <p>Description: {{item.description}}</p> 
        <!-- <li ng-repeat="item in list.items">
        {{item.name}} = {{item.description}}  -->
        <button ng-click="onRemove({index: $index})">Don't want </button>
