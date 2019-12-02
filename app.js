@@ -10,14 +10,14 @@
 
 		function FoundItemsDirective() {
 			var ddo = {
-				restrict: 'E',
+				// restrict: 'E',
 				templateUrl: 'foundItems.html',
 				scope: {
 					found: '<',
 					onRemove: '&',
 					empty: '<'
-				}
-				// controller: NarrowItDownController, 
+				},
+				controller: NarrowItDownController, 
 				controllerAs: 'choices',
 				bindToController: true
 
