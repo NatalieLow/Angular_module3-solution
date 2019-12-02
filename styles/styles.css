@@ -5,6 +5,12 @@ input[type="text"] {
   width: 200px;
   float: left;
 }
+ul {
+  list-style-type: none;
+}
+#results {
+  clear: both;
+}
 .narrow-button {
   float: left;
   margin-left: 10px;

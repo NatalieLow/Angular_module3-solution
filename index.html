@@ -14,11 +14,23 @@
       <input type="text" placeholder="search term" ng-model="choices.searchTerm" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button ng-click="choices.getMatchedMenuItems();" class="btn btn-primary">Narrow It Down For Me!</button>
+      <button ng-click="choices.getMatchedMenuItems(); clicked=true" class="btn btn-primary">Narrow It Down For Me!</button>
+    </div>
+    <div id = "results" ng-if="clicked">
+      <!-- found-items should be implemented as a component -->
+      <found-items found="choices.found" on-remove="choices.removeItem(index)"></found-items>
+      <!-- <h3>Menu items that match your search:</h3>
+      <ul>
+        <li ng-repeat="item in choices.found">
+           <p>Name: {{item.name}}</p>
+           <p>Short Name: {{item.short_name}}</p>
+           <p>Description: {{item.description}} </p>
+        <p><button ng-click="choices.removeItem($index);">Don't want </button></p></li>
+      </ul> -->
+
     </div>
 
-    <!-- found-items should be implemented as a component -->
-    <found-items found-items="choices.found" on-remove="choices.removeItem(index)"></found-items>
+    
   </div>
   <script src="angular.min.js"></script>
   <script src="app.js"></script>
