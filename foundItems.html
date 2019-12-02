@@ -1,5 +1,5 @@
 <h1>Menu items that match your search:</h1>
-<div ng-if="found.length != 0">
+<div ng-if="(found | json != ({} | json)">
 	<ul ng-repeat="item in found">
 	    <li>
 	       <p>Name: {{item.name}}</p>
@@ -12,6 +12,6 @@
 	   </li>
 	</ul>
 </div>
-<div ng-if="found.length === 0">
+<div ng-if="(found | json === ({} | json)">
 	<p>Nothing Found! </p>
 </div>
