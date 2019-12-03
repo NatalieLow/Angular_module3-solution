@@ -34,8 +34,12 @@
 			 		var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
 			 		console.log(choices.searchTerm);
 			 		promise.then(function(response){
-			 			choices.found = response;
-			 			choices.empty = false;	
+			 			if (response.length === 0) {
+			 				choices.empty = true;	
+			 			}else{
+			 				choices.found = response;
+			 				choices.empty = false;
+			 			}	
 			 		})
 			 		.catch(function(error){
 			 			console.log(error);
