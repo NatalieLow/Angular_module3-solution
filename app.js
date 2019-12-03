@@ -25,26 +25,31 @@
 		 function NarrowItDownController(MenuSearchService) {
 		 	var choices = this;
 		 	choices.searchTerm = "";
-		 	choices.empty = "";
+
+		 	// choices.empty = "";
 
 		 	choices.getMatchedMenuItems = function (){
-		 		if (choices.searchTerm === ""){
+		 		if (choices.searchTerm === "") {
 		 			choices.empty = true;
-		 		} else {
-			 		var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
-			 		console.log(choices.searchTerm);
-			 		promise.then(function(response){
-			 			if (response.length === 0) {
-			 				choices.empty = true;	
-			 			}else{
-			 				choices.found = response;
-			 				choices.empty = false;
-			 			}	
-			 		})
-			 		.catch(function(error){
-			 			console.log(error);
-			 		});
-		 		}	
+
+		 		}else {
+		 			var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
+		 			console.log(choices.searchTerm);
+		 			promise.then(function(response){
+		 			if (response.length === 0) {
+		 				choices.empty = true;	
+		 			}else{
+		 				choices.empty = false;
+		 				choices.found = response;	
+		 			}	
+		 			console.log(choices.empty);
+		 		})
+		 		.catch(function(error){
+		 			console.log(error);
+		 		});	
+
+		 		}
+	 			
 
 		 	};
 
