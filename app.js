@@ -17,9 +17,6 @@
 					onRemove: '&',
 					onEmpty: '<'
 				}
-				// controller: NarrowItDownController, 
-				// controllerAs: 'choices',
-				// bindToController: true
 			};
 			return ddo;
 		}
@@ -29,21 +26,16 @@
 		 	var choices = this;
 		 	choices.searchTerm = "";
 		 	choices.empty = "";
-		 	// var found_items = [];
-		 	// choices.found = getItems();
 
 		 	choices.getMatchedMenuItems = function (){
 		 		if (choices.searchTerm === ""){
 		 			choices.empty = true;
-		 			console.log(choices.empty)
 		 		} else {
 			 		var promise = MenuSearchService.getMatchedMenuItems(choices.searchTerm);
 			 		console.log(choices.searchTerm);
 			 		promise.then(function(response){
 			 			choices.found = response;
-			 			choices.empty = false;
-			 			console.log(choices.found);
-			 			console.log(choices.empty);	
+			 			choices.empty = false;	
 			 		})
 			 		.catch(function(error){
 			 			console.log(error);
@@ -51,10 +43,6 @@
 		 		}	
 
 		 	};
-
-		 	// var getItems = function () {
-		 	// 	return found_items;
-		 	// };
 
 		 	choices.removeItem = function (index){
 				choices.found.splice(index, 1);

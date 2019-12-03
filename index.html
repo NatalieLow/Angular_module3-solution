@@ -19,18 +19,7 @@
     <div id = "results" ng-if="clicked">
       <!-- found-items should be implemented as a component -->
       <found-items found-item="choices.found" on-remove="choices.removeItem(index)" on-empty="choices.empty"></found-items>
-      <!-- <h3>Menu items that match your search:</h3>
-      <ul>
-        <li ng-repeat="item in choices.found">
-           <p>Name: {{item.name}}</p>
-           <p>Short Name: {{item.short_name}}</p>
-           <p>Description: {{item.description}} </p>
-        <p><button ng-click="choices.removeItem($index);">Don't want </button></p></li>
-      </ul> -->
-
     </div>
-
-    
   </div>
   <script src="angular.min.js"></script>
   <script src="app.js"></script>
