@@ -10,25 +10,19 @@
 
 		function FoundItemsDirective() {
 			var ddo = {
-				// restrict: 'E',
+				restrict: 'E',
 				templateUrl: 'foundItems.html',
 				scope: {
-					found: '<',
+					foundItem: '<',
 					onRemove: '&',
-					empty: '<'
-				},
-				controller: NarrowItDownController, 
-				controllerAs: 'choices',
-				bindToController: true
-
+					onEmpty: '<'
+				}
+				// controller: NarrowItDownController, 
+				// controllerAs: 'choices',
+				// bindToController: true
 			};
-
 			return ddo;
 		}
-
-		// function FoundItemsDirectiveController() {
-		// 	var choices = this;
-		// }
 
 		NarrowItDownController.$inject = ['MenuSearchService'];
 		 function NarrowItDownController(MenuSearchService) {

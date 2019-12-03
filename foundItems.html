@@ -1,15 +1,15 @@
 <!-- <h1>Menu items that match your search:</h1> -->
-<ul ng-repeat="item in found">
+<ul ng-hide="onEmpty" ng-repeat="item in foundItem">
     <li>
        <p>Name: {{item.name}}</p>
        <p>Short Name: {{item.short_name}}</p>
        <p>Description: {{item.description}}</p> 
        <!-- <li ng-repeat="item in list.items">
        {{item.name}} = {{item.description}}  -->
-       <button ng-click="onRemove({index: $index})">Don't want </button>
+       <button ng-click="onRemove({index: $index});">Don't want </button>
        <!-- <button ng-click="choices.removeItem(index: $index);" class="btn btn-primary">Don't want this one!</button> -->
    </li>
 </ul>
 
-<p ng-if="empty">Nothing Found! </p>
+<p ng-show="onEmpty" class="alert alert-danger">Nothing Found! </p>
 
